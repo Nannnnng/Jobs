@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Open engineering, product and AI roles in Tokyo, curated by Nancy Yuan.">
+<title>Tokyo Tech Roles</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  html, body { margin: 0; }
+  img { max-width: 100%; }
+  [hidden] { display: none !important; }
+  /* Layout: dark header band with stats, sticky-free filter panel, then role cards in a responsive grid grouped by function */
+  :root {
+    --bg: #f6f4f1;
+    --surface: #ffffff;
+    --fg: #1f2329;
+    --muted: #69707a;
+    --line: #e6e2dc;
+    --chip: #f0eeea;
+    --accent: #c8102e;        /* company red */
+    --accent-soft: #fde9ec;
+    --band: #262e38;          /* header band, same in both themes */
+    --on-band: #ffffff;
+    --on-band-muted: #b7bec8;
+    --money: #18794e;
+    --jp-none-bg: #e3f4ea;   --jp-none: #18794e;
+    --jp-conv-bg: #e8f0fb;   --jp-conv: #2556a3;
+    --jp-biz-bg: #fdf1dc;    --jp-biz: #8a5300;
+    --jp-fluent-bg: #fde6dc; --jp-fluent: #a8401a;
+    --work-bg: #efeafb;      --work: #5b3fb0;
+    --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+    --font-body: "IBM Plex Sans", "Helvetica Neue", Arial, sans-serif;
+    --font-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #121418; --surface: #1b1e24; --fg: #eceef1; --muted: #9aa1ab; --line: #2c3038; --chip: #252930;
+      --accent: #ff5a6e; --accent-soft: #3b1a20; --band: #0b0d10; --money: #5fd39b;
+      --jp-none-bg: #16352a; --jp-none: #7ee0ad; --jp-conv-bg: #1a2a45; --jp-conv: #9cc0ff;
+      --jp-biz-bg: #3a2a10; --jp-biz: #f3c06b; --jp-fluent-bg: #3e2016; --jp-fluent: #ff9f7a;
+      --work-bg: #2a2245; --work: #c2b2ff; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #121418; --surface: #1b1e24; --fg: #eceef1; --muted: #9aa1ab; --line: #2c3038; --chip: #252930;
+    --accent: #ff5a6e; --accent-soft: #3b1a20; --band: #0b0d10; --money: #5fd39b;
+    --jp-none-bg: #16352a; --jp-none: #7ee0ad; --jp-conv-bg: #1a2a45; --jp-conv: #9cc0ff;
+    --jp-biz-bg: #3a2a10; --jp-biz: #f3c06b; --jp-fluent-bg: #3e2016; --jp-fluent: #ff9f7a;
+    --work-bg: #2a2245; --work: #c2b2ff; color-scheme: dark;
+  }
+
+  body { background: var(--bg); color: var(--fg); font: 15px/1.55 var(--font-body); }
+  .gutter {
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+  }
+  .inner { max-width: 1180px; margin: 0 auto; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  /* Header band */
+  .band { background: var(--band); color: var(--on-band); border-bottom: 5px solid #c8102e; }
+  .band .inner { padding-block: 36px 32px; display: grid; gap: 22px; }
+  .band-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; flex-wrap: wrap; }
+  .who { display: flex; align-items: center; gap: 20px; min-width: 0; flex: 1 1 420px; }
+  .avatar {
+    flex: none; width: 96px; height: 96px; border-radius: 50%; object-fit: cover;
+    border: 3px solid #c8102e; background: var(--on-band-muted);
+  }
+  @media (max-width: 560px) { .who { flex-direction: column; align-items: flex-start; gap: 14px; } .avatar { width: 80px; height: 80px; } }
+  .band h1 { font: 700 clamp(28px, 5vw, 42px)/1.1 var(--font-display); margin: 0; text-wrap: balance; letter-spacing: -.01em; }
+  .byline { color: var(--on-band-muted); margin: 8px 0 0; font-size: 15px; }
+  .byline a { color: var(--on-band); }
+  .band-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+  .stats { display: flex; gap: 16px 48px; flex-wrap: wrap; }
+  .stat b { display: block; font: 700 clamp(26px, 4vw, 34px)/1.1 var(--font-display); font-variant-numeric: tabular-nums; }
+  .stat span { font: 500 11px var(--font-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--on-band-muted); }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px; text-decoration: none; cursor: pointer;
+    font: 600 14px var(--font-body); padding: 11px 18px; border-radius: 8px; border: 1px solid transparent;
+  }
+  .btn-red { background: #c8102e; color: #ffffff; }
+  .btn-red:hover { background: #a80d26; }
+  .btn-ghost { border-color: rgba(255,255,255,.35); color: var(--on-band); background: transparent; }
+  .btn-ghost:hover { background: rgba(255,255,255,.08); }
+
+  /* Filters */
+  main .inner { padding-block: 28px 56px; display: grid; gap: 28px; }
+  .panel { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 16px; display: grid; gap: 14px; }
+  .panel-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+  .tabs { display: flex; flex-wrap: wrap; gap: 4px; background: var(--chip); padding: 4px; border-radius: 10px; }
+  .tab { font: 500 14px var(--font-body); border: 0; background: transparent; color: var(--muted); padding: 8px 14px; border-radius: 7px; cursor: pointer; }
+  .tab[aria-pressed="true"] { background: var(--band); color: #ffffff; }
+  .tab small { font: 400 12px var(--font-mono); opacity: .75; margin-left: 4px; }
+  .count { font-size: 14px; color: var(--muted); }
+  .count b { color: var(--fg); font-variant-numeric: tabular-nums; }
+  .controls { display: grid; grid-template-columns: minmax(0, 2fr) repeat(4, minmax(0, 1fr)); gap: 10px; }
+  .controls input, .controls select {
+    width: 100%; box-sizing: border-box; font: inherit; font-size: 14px; color: var(--fg);
+    background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px;
+  }
+  .quick { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+  .quick-label { font: 500 11px var(--font-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-right: 6px; }
+  .qchip {
+    font: 600 13px var(--font-body); padding: 6px 12px; border-radius: 999px; cursor: pointer;
+    background: var(--surface); border: 1px solid var(--line); color: var(--fg);
+  }
+  .qchip small { font: 400 12px var(--font-mono); color: var(--muted); margin-left: 4px; }
+  .qchip.en { border-color: var(--jp-none); color: var(--jp-none); }
+  .qchip.rem { border-color: var(--work); color: var(--work); }
+  .qchip[aria-pressed="true"] { background: var(--fg); border-color: var(--fg); color: var(--bg); }
+  .qchip[aria-pressed="true"] small { color: inherit; }
+  .clear { margin-left: auto; border: 0; background: none; color: var(--accent); font: 500 13px var(--font-body); cursor: pointer; }
+
+  /* Groups + cards */
+  .group { display: grid; gap: 14px; }
+  .group-title { display: flex; align-items: baseline; gap: 10px; margin: 0; font: 700 22px/1.2 var(--font-display); }
+  .group-title span { font: 400 13px var(--font-mono); color: var(--muted); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 14px; }
+  .card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px;
+    display: flex; flex-direction: column; gap: 10px; min-width: 0;
+  }
+  .card:hover { border-color: var(--muted); }
+  .card-head { display: flex; gap: 12px; align-items: center; }
+  .logo {
+    flex: none; width: 76px; height: 44px; border-radius: 8px; border: 1px solid var(--line);
+    background: #ffffff; display: flex; align-items: center; justify-content: center; padding: 5px; box-sizing: border-box;
+  }
+  .logo img { display: block; max-width: 100%; max-height: 100%; width: auto; height: auto; }
+  .logo.mono { background: var(--accent-soft); color: var(--accent); font: 700 15px var(--font-display); }
+  .co { min-width: 0; }
+  .co b { display: block; font: 600 16px/1.25 var(--font-display); }
+  .co span { font-size: 13px; color: var(--muted); }
+  .card h3 { margin: 0; font: 500 16px/1.35 var(--font-body); text-wrap: balance; }
+  .salary { font: 600 15px var(--font-mono); color: var(--money); font-variant-numeric: tabular-nums; }
+  .salary.ask { color: var(--muted); font-weight: 500; }
+  .pills { display: flex; flex-wrap: wrap; gap: 6px; }
+  .pill { font: 600 12px/1 var(--font-body); padding: 6px 9px; border-radius: 6px; background: var(--chip); color: var(--muted); }
+  .pill.jp-None { background: var(--jp-none-bg); color: var(--jp-none); }
+  .pill.jp-Conversational { background: var(--jp-conv-bg); color: var(--jp-conv); }
+  .pill.jp-Business { background: var(--jp-biz-bg); color: var(--jp-biz); }
+  .pill.jp-Fluent { background: var(--jp-fluent-bg); color: var(--jp-fluent); }
+  .pill.work { background: var(--work-bg); color: var(--work); }
+  .pill.tag { font-weight: 500; }
+  .pill.flag { background: var(--accent); color: #ffffff; }
+  .card-foot { margin-top: auto; padding-top: 8px; display: flex; justify-content: space-between; align-items: center; gap: 10px; font-size: 13px; color: var(--muted); }
+  .card-foot .loc { min-width: 0; overflow-wrap: anywhere; }
+  .more { border: 0; background: none; color: var(--accent); font: 600 14px var(--font-body); cursor: pointer; white-space: nowrap; padding: 4px 0; }
+
+  .empty { text-align: center; color: var(--muted); padding: 48px 0; }
+
+  /* Details dialog */
+  dialog {
+    border: 0; border-radius: 14px; padding: 0; width: min(640px, calc(100vw - 32px)); max-height: calc(100vh - 48px);
+    background: var(--surface); color: var(--fg); box-shadow: 0 20px 60px rgba(0,0,0,.35);
+  }
+  dialog::backdrop { background: rgba(15, 18, 22, .55); }
+  .dlg { padding: 24px; display: grid; gap: 14px; }
+  .dlg-head { display: flex; justify-content: space-between; gap: 12px; align-items: flex-start; }
+  .dlg h2 { margin: 0; font: 700 24px/1.2 var(--font-display); text-wrap: balance; }
+  .x { border: 1px solid var(--line); background: var(--surface); color: var(--fg); border-radius: 8px; width: 36px; height: 36px; cursor: pointer; font-size: 18px; flex: none; }
+  .facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin: 0; }
+  .facts div { background: var(--chip); border-radius: 8px; padding: 10px 12px; }
+  .facts dt { font: 500 11px var(--font-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .facts dd { margin: 2px 0 0; font-weight: 600; }
+  .dlg h4 { margin: 4px 0 0; font: 500 11px var(--font-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); }
+  .dlg p { margin: 0; }
+  .dlg ul { margin: 0; padding-left: 20px; display: grid; gap: 4px; }
+  .apply { background: var(--accent-soft); border-radius: 10px; padding: 14px; display: grid; gap: 10px; }
+  .apply b { user-select: all; }
+
+  /* Hiring companies */
+  .hire { background: var(--band); color: var(--on-band); border-radius: 14px; border-left: 6px solid #c8102e; padding: clamp(22px, 4vw, 36px); display: grid; gap: 12px; scroll-margin-top: 16px; }
+  .hire .eyebrow { font: 500 11px var(--font-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--on-band-muted); }
+  .hire h2 { margin: 0; font: 700 clamp(22px, 4vw, 30px)/1.2 var(--font-display); text-wrap: balance; }
+  .hire p { margin: 0; max-width: 62ch; color: var(--on-band-muted); }
+  .hire ul { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
+  .placed { display: grid; gap: 10px; margin-top: 6px; }
+  .placed h3 { margin: 0; font: 500 11px var(--font-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--on-band-muted); }
+  .areas { display: flex; flex-wrap: wrap; gap: 6px; }
+  .areas span { font: 500 13px/1 var(--font-body); padding: 7px 10px; border-radius: 999px; border: 1px solid rgba(255,255,255,.22); }
+  .placed-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 28px; }
+  @media (max-width: 640px) { .placed-grid { grid-template-columns: 1fr; } }
+  .placement {
+    display: grid; grid-template-columns: 5.2em 1fr; grid-template-areas: "pay role" "pay co";
+    column-gap: 12px; align-items: baseline; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,.12);
+  }
+  .placement b { grid-area: role; font: 600 15px/1.3 var(--font-body); }
+  .placement-co { grid-area: co; color: var(--on-band-muted); font-size: 13px; }
+  .placement-pay { grid-area: pay; align-self: center; font: 700 20px/1 var(--font-display); color: #ff5a6e; font-variant-numeric: tabular-nums; }
+  .hire .row { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 16px; }
+  .hire .row span { color: var(--on-band-muted); font-size: 14px; }
+  .hire .row b { color: var(--on-band); user-select: all; }
+
+  footer { color: var(--muted); font-size: 13px; border-top: 1px solid var(--line); padding-top: 16px; }
+
+  @media (max-width: 860px) {
+    .controls { grid-template-columns: 1fr 1fr; }
+    .controls .search { grid-column: 1 / -1; }
+  }
+  @media (max-width: 480px) {
+    .grid { grid-template-columns: 1fr; }
+    .band .inner { padding-block: 24px; }
+    .clear { margin-left: 0; }
+  }
+  @media (prefers-reduced-motion: no-preference) { .btn, .tab, .qchip, .card { transition: background .15s, border-color .15s, color .15s; } }
+</style>
+</head>
+<body>
+
+<header class="band gutter">
+  <div class="inner">
+    <div class="band-top">
+      <div class="who">
+        <img class="avatar" src="profile.jpg" alt="Nancy Yuan" width="96" height="96">
+        <div>
+        <h1>Open engineering, product &amp; AI roles, Tokyo</h1>
+        <p class="byline">Curated by Nancy Yuan · <b>nancy.yuan@roberthalf.jp</b> · <a href="https://www.linkedin.com/in/nancy-y-50744a70/" target="_blank" rel="noopener">LinkedIn</a></p>
+        </div>
+      </div>
+      <div class="band-actions">
+        <a class="btn btn-red" href="https://outlook.office.com/bookwithme/user/8de28ae17ec94412b207e66f1f109db3%40roberthalf.com/meetingtype/cpkDkl-lCkSyXB4V3GgGVw2?anonymous&amp;ismsaljsauthenabled=true" target="_blank" rel="noopener">Book a call</a>
+        <a class="btn btn-ghost" href="#hire">Hiring? Work with me</a>
+      </div>
+    </div>
+    <div class="stats">
+      <div class="stat"><b id="stat-companies">–</b><span>Companies</span></div>
+      <div class="stat"><b id="stat-roles">–</b><span>Open roles</span></div>
+      <div class="stat"><b>October 2026</b><span>Updated</span></div>
+    </div>
+  </div>
+</header>
+
+<main class="gutter">
+  <div class="inner">
+    <section class="panel" aria-label="Filter roles">
+      <div class="panel-top">
+        <div class="tabs" id="tabs" role="group" aria-label="Function"></div>
+        <div class="count" id="count"></div>
+      </div>
+      <div class="controls">
+        <input id="q" class="search" type="search" placeholder="Search role, company or skill" aria-label="Search roles">
+        <select id="jp" aria-label="Japanese level">
+          <option value="">Any Japanese level</option>
+          <option value="None">English only OK</option>
+          <option value="Conversational">Up to conversational</option>
+          <option value="Business">Up to business level</option>
+        </select>
+        <select id="salary" aria-label="Salary">
+          <option value="">Any salary</option>
+          <option value="10">¥10M+</option>
+          <option value="15">¥15M+</option>
+          <option value="20">¥20M+</option>
+        </select>
+        <select id="work" aria-label="Work style">
+          <option value="">Any work style</option>
+          <option value="Remote">Remote</option>
+          <option value="Hybrid">Hybrid</option>
+          <option value="On-site">On-site</option>
+        </select>
+        <select id="company" aria-label="Company"><option value="">Any company</option></select>
+      </div>
+      <div class="quick">
+        <span class="quick-label">Quick filters</span>
+        <button class="qchip en" type="button" id="quick-en" aria-pressed="false"></button>
+        <button class="qchip rem" type="button" id="quick-remote" aria-pressed="false"></button>
+        <button class="clear" type="button" id="clear">Clear all filters</button>
+      </div>
+    </section>
+
+    <div id="list" style="display:grid;gap:32px"></div>
+
+    <section class="hire" id="hire" aria-labelledby="hire-title">
+      <div class="eyebrow">For hiring companies</div>
+      <h2 id="hire-title">Hiring engineers, product managers or AI talent in Tokyo?</h2>
+      <p>With 9+ years of experience in tech recruiting, I'm in regular contact with senior and bilingual engineers across Japan. I hire for FDE, software engineering, product and AI roles.</p>
+      <div class="areas">
+        <span>FDE</span>
+        <span>Software Engineering</span>
+        <span>Product</span>
+        <span>AI &amp; ML</span>
+        <span>Bilingual EN/JP</span>
+      </div>
+      <div class="placed">
+        <h3>Recent placements</h3>
+        <div class="placed-grid">
+          <article class="placement">
+            <b>Forward Deployed Engineer (FDE)</b>
+            <span class="placement-co">Consulting firm, Japan</span>
+            <span class="placement-pay">¥30M</span>
+          </article>
+          <article class="placement">
+            <b>VP of Engineering</b>
+            <span class="placement-co">Entertainment SaaS</span>
+            <span class="placement-pay">¥24M</span>
+          </article>
+          <article class="placement">
+            <b>Technical Lead</b>
+            <span class="placement-co">AI SaaS</span>
+            <span class="placement-pay">¥13M</span>
+          </article>
+          <article class="placement">
+            <b>Senior Software Engineer</b>
+            <span class="placement-co">FinTech</span>
+            <span class="placement-pay">¥12M</span>
+          </article>
+        </div>
+      </div>
+      <div class="row">
+        <a class="btn btn-red" href="https://outlook.office.com/bookwithme/user/8de28ae17ec94412b207e66f1f109db3%40roberthalf.com/meetingtype/cpkDkl-lCkSyXB4V3GgGVw2?anonymous&amp;ismsaljsauthenabled=true" target="_blank" rel="noopener">Book a call about hiring</a>
+        <span>Or email <b>nancy.yuan@roberthalf.jp</b></span>
+      </div>
+    </section>
+
+    <footer>Salaries are annual, in Japanese yen, and some include fixed overtime pay. Final offers depend on experience.</footer>
+  </div>
+</main>
+
+<dialog id="dlg" aria-labelledby="dlg-title"><div class="dlg" id="dlg-body"></div></dialog>
+
+<script>
+const BOOKING_URL = "https://outlook.office.com/bookwithme/user/8de28ae17ec94412b207e66f1f109db3%40roberthalf.com/meetingtype/cpkDkl-lCkSyXB4V3GgGVw2?anonymous&amp;ismsaljsauthenabled=true";
+const EMAIL = "nancy.yuan@roberthalf.jp";
+const FUNCTIONS = [
+  { key: "PdM", label: "Product Manager (PdM)", tab: "PdM" },
+  { key: "Software Engineer", label: "Software Engineer", tab: "Software Engineer" },
+  { key: "AI Engineer", label: "AI Engineer", tab: "AI Engineer" },
+];
+const JP_LABEL = { None: "English only OK", Conversational: "Conversational Japanese", Business: "Business Japanese", Fluent: "Fluent Japanese (N1)", "To confirm": "Japanese: to confirm" };
+const JP_RANK = { None: 0, Conversational: 1, Business: 2, Fluent: 3, "To confirm": 9 };
+// Logo files live in logos/. Companies without one get an initials badge.
+const LOGOS = {
+  "LiNKX": "logos/linkx.png", "Looop": "logos/looop.png", "Mercari": "logos/mercari.png",
+  "Exa Enterprise AI (ExaWizards)": "logos/exawizards.png", "KPMG Ignition Tokyo": "logos/kpmg.png",
+  "Fast Accounting": "logos/fastaccounting.png", "tripla": "logos/tripla.png", "Sansan": "logos/sansan.png",
+  "Trust": "logos/trust.png", "Geniee": "logos/geniee.png", "H2 Corporation": "logos/h2.png", "Hmlet Japan": "logos/hmlet.png",
+  "THECOO": "logos/thecoo.png", "EARTHBRAIN": "logos/earthbrain.png",
+};
+
+const state = { q: "", fn: "", jp: "", salary: 0, work: "", company: "", quickEn: false, quickRemote: false };
+let jobs = [];
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+// "¥8M – ¥12M" -> 12, "Up to ¥25M" -> 25, "Ask" -> 0
+const salaryMax = (s) => Math.max(0, ...(String(s).match(/[\d.]+(?=M)/g) || []).map(Number));
+const workType = (w) => /remote/i.test(w) && !/hybrid/i.test(w) ? "Remote" : /hybrid/i.test(w) ? "Hybrid" : /on-site/i.test(w) ? "On-site" : "Other";
+const remoteFriendly = (j) => ["Remote", "Hybrid"].includes(workType(j.workStyle));
+
+function matches(j, skip) {
+  const q = state.q.toLowerCase();
+  return (skip === "fn" || !state.fn || j.function === state.fn) &&
+    (!state.jp || JP_RANK[j.japanese] <= JP_RANK[state.jp]) &&
+    (!state.salary || salaryMax(j.salary) >= state.salary) &&
+    (!state.work || workType(j.workStyle) === state.work) &&
+    (!state.company || j.company === state.company) &&
+    (!state.quickEn || j.japanese === "None") &&
+    (!state.quickRemote || remoteFriendly(j)) &&
+    (!q || [j.title, j.company, j.industry, j.summary, j.function, ...j.stack].join(" ").toLowerCase().includes(q));
+}
+
+function logo(company) {
+  if (LOGOS[company]) return `<div class="logo"><img src="${LOGOS[company]}" alt="${esc(company)} logo"></div>`;
+  const initials = company.split(/\s+/).map((w) => w[0]).join("").slice(0, 2).toUpperCase();
+  return `<div class="logo mono" aria-hidden="true">${esc(initials)}</div>`;
+}
+
+function card(j) {
+  const ask = j.salary === "Ask";
+  const flag = /urgent/i.test(j.status) ? "Urgent" : /close/i.test(j.status) ? "Closes soon" : "";
+  return `<article class="card">
+    <div class="card-head">${logo(j.company)}<div class="co"><b>${esc(j.company)}</b><span>${esc(j.industry)}</span></div></div>
+    <h3>${esc(j.title)}</h3>
+    <div class="salary${ask ? " ask" : ""}">${ask ? "Salary: ask me" : esc(j.salary)}</div>
+    <div class="pills">
+      ${flag ? `<span class="pill flag">${flag}</span>` : ""}
+      <span class="pill jp-${esc(j.japanese.replace(/\s/g, ""))}">${esc(JP_LABEL[j.japanese])}</span>
+      <span class="pill work">${esc(j.workStyle === "Ask me" ? "Work style: ask me" : j.workStyle)}</span>
+      <span class="pill">${esc(j.level)}</span>
+    </div>
+    <div class="pills">${j.stack.slice(0, 4).map((t) => `<span class="pill tag">${esc(t)}</span>`).join("")}${j.stack.length > 4 ? `<span class="pill tag">+${j.stack.length - 4}</span>` : ""}</div>
+    <div class="card-foot"><span class="loc">${esc(j.location)}</span><button class="more" type="button" data-id="${esc(j.id)}">Job details ↗</button></div>
+  </article>`;
+}
+
+function render() {
+  const shown = jobs.filter((j) => matches(j));
+  $("#count").innerHTML = `<b>${shown.length}</b> of ${jobs.length} roles shown`;
+  document.querySelectorAll(".tab").forEach((t) => {
+    const n = jobs.filter((j) => (!t.dataset.key || j.function === t.dataset.key) && matches(j, "fn")).length;
+    t.querySelector("small").textContent = n;
+  });
+  $("#list").innerHTML = shown.length ? FUNCTIONS.map((f) => {
+    const group = shown.filter((j) => j.function === f.key);
+    if (!group.length) return "";
+    return `<section class="group" aria-label="${esc(f.label)}">
+      <h2 class="group-title">${esc(f.label)} <span>${group.length} ${group.length === 1 ? "role" : "roles"}</span></h2>
+      <div class="grid">${group.map(card).join("")}</div>
+    </section>`;
+  }).join("") : `<p class="empty">No roles match these filters. Try clearing one, or <a href="${BOOKING_URL}" target="_blank" rel="noopener">book a call</a> and tell me what you're looking for.</p>`;
+}
+
+function openDetails(id) {
+  const j = jobs.find((x) => x.id === id);
+  if (!j) return;
+  $("#dlg-body").innerHTML = `
+    <div class="dlg-head">
+      <div class="card-head">${logo(j.company)}<div class="co"><b>${esc(j.company)}</b><span>${esc(j.industry)}</span></div></div>
+      <button class="x" type="button" id="dlg-close" aria-label="Close">×</button>
+    </div>
+    <h2 id="dlg-title">${esc(j.title)}</h2>
+    <dl class="facts">
+      <div><dt>Salary</dt><dd>${esc(j.salary === "Ask" ? "Ask me" : j.salary)}</dd></div>
+      <div><dt>Work style</dt><dd>${esc(j.workStyle)}</dd></div>
+      <div><dt>Location</dt><dd>${esc(j.location)}</dd></div>
+      <div><dt>Level</dt><dd>${esc(j.level)}</dd></div>
+    </dl>
+    <p>${esc(j.summary)}</p>
+    <h4>What they're looking for</h4>
+    <ul>${j.requirements.map((r) => `<li>${esc(r)}</li>`).join("")}</ul>
+    <h4>Language</h4>
+    <p>${esc(j.language)}</p>
+    <h4>Tech &amp; skills</h4>
+    <div class="pills">${j.stack.map((t) => `<span class="pill tag">${esc(t)}</span>`).join("")}</div>
+    <div class="apply">
+      <p>Interested? Email <b>${EMAIL}</b> with your CV and the subject "${esc(j.title)} – ${esc(j.company)}".</p>
+      <div><a class="btn btn-red" href="${BOOKING_URL}" target="_blank" rel="noopener">Book a call about this role</a></div>
+    </div>`;
+  $("#dlg-close").onclick = () => $("#dlg").close();
+  $("#dlg").showModal();
+}
+
+function setQuick(btn, on) { btn.setAttribute("aria-pressed", on); }
+
+function setup() {
+  $("#stat-companies").textContent = new Set(jobs.map((j) => j.company)).size;
+  $("#stat-roles").textContent = jobs.length;
+
+  [{ key: "", tab: "All roles" }, ...FUNCTIONS].forEach((f, i) => {
+    const b = document.createElement("button");
+    b.className = "tab"; b.type = "button"; b.dataset.key = f.key;
+    b.innerHTML = `${esc(f.tab)}<small></small>`;
+    b.setAttribute("aria-pressed", i === 0);
+    b.onclick = () => {
+      state.fn = f.key;
+      document.querySelectorAll(".tab").forEach((t) => t.setAttribute("aria-pressed", t === b));
+      render();
+    };
+    $("#tabs").append(b);
+  });
+
+  [...new Set(jobs.map((j) => j.company))].sort().forEach((c) => $("#company").add(new Option(c, c)));
+  $("#quick-en").innerHTML = `English only OK<small>${jobs.filter((j) => j.japanese === "None").length}</small>`;
+  $("#quick-remote").innerHTML = `Remote friendly<small>${jobs.filter(remoteFriendly).length}</small>`;
+
+  $("#q").oninput = (e) => { state.q = e.target.value; render(); };
+  $("#jp").onchange = (e) => { state.jp = e.target.value; render(); };
+  $("#salary").onchange = (e) => { state.salary = Number(e.target.value); render(); };
+  $("#work").onchange = (e) => { state.work = e.target.value; render(); };
+  $("#company").onchange = (e) => { state.company = e.target.value; render(); };
+  $("#quick-en").onclick = (e) => { state.quickEn = !state.quickEn; setQuick(e.currentTarget, state.quickEn); render(); };
+  $("#quick-remote").onclick = (e) => { state.quickRemote = !state.quickRemote; setQuick(e.currentTarget, state.quickRemote); render(); };
+  $("#clear").onclick = () => {
+    Object.assign(state, { q: "", fn: "", jp: "", salary: 0, work: "", company: "", quickEn: false, quickRemote: false });
+    ["#q", "#jp", "#salary", "#work", "#company"].forEach((s) => { $(s).value = ""; });
+    document.querySelectorAll(".tab").forEach((t, i) => t.setAttribute("aria-pressed", i === 0));
+    setQuick($("#quick-en"), false); setQuick($("#quick-remote"), false);
+    render();
+  };
+  $("#list").onclick = (e) => { const b = e.target.closest(".more"); if (b) openDetails(b.dataset.id); };
+  $("#dlg").onclick = (e) => { if (e.target.id === "dlg") $("#dlg").close(); };
+  render();
+}
+
+fetch("jobs.json")
+  .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
+  .then((data) => { jobs = data; setup(); })
+  .catch(() => { $("#list").innerHTML = `<p class="empty">Couldn't load the job list. Refresh the page to try again.</p>`; });
+</script>
+</body>
+</html>

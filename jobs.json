@@ -1,0 +1,648 @@
+[
+  {
+    "id": "looop-cdo",
+    "title": "Chief Data Officer",
+    "function": "AI Engineer",
+    "company": "Looop",
+    "industry": "Renewable Energy",
+    "location": "Ueno, Tokyo",
+    "workStyle": "On-site",
+    "level": "Executive",
+    "salary": "¥11M – ¥18.2M",
+    "language": "English OK (Japanese a plus)",
+    "japanese": "None",
+    "stack": [
+      "Databricks",
+      "Python",
+      "BigQuery",
+      "AWS",
+      "GCP",
+      "MLOps",
+      "Tableau",
+      "Looker"
+    ],
+    "summary": "Executive role owning Looop's company-wide data and AI strategy. Leads the \"One Data Platform\" initiative and the Data Management Office, covering governance, data quality, analytics and AI adoption.",
+    "requirements": [
+      "Built and ran data strategy aligned with corporate strategy",
+      "Hands-on experience building data platforms (DWH, data lake, ETL, cloud)",
+      "Experience with data/AI governance, security and privacy (GDPR, APPI)",
+      "Led cross-organizational projects",
+      "Business-level English"
+    ],
+    "status": "Open"
+  },
+  {
+    "id": "tripla-senior-swe",
+    "title": "Senior Software Engineer",
+    "function": "Software Engineer",
+    "company": "tripla",
+    "industry": "Travel Tech",
+    "location": "Nishi-Shinjuku, Tokyo",
+    "workStyle": "Hybrid (2 days/week in office)",
+    "level": "Senior",
+    "salary": "¥10M – ¥11M",
+    "language": "English",
+    "japanese": "None",
+    "stack": [
+      "Go",
+      "Kotlin",
+      "Scala",
+      "Rust",
+      "C#",
+      "AWS Aurora",
+      "Cassandra",
+      "Datadog",
+      "CI/CD"
+    ],
+    "summary": "Domain leader who moves a high-traffic hotel booking monolith to a service-oriented architecture. Helps choose the new tech stack, protects payment and booking reliability, and mentors the team.",
+    "requirements": [
+      "Statically-typed language (Go, Kotlin, Scala, Rust or C#) with async/concurrency",
+      "Designed services in SOA and refactored legacy monoliths",
+      "CI/CD pipelines and zero-downtime deployments",
+      "Scalable databases (e.g., Cassandra, Aurora)",
+      "Observability (Datadog, Grafana, Prometheus)"
+    ],
+    "status": "Open"
+  },
+  {
+    "id": "tripla-ml-engineer",
+    "title": "AI / Machine Learning Engineer",
+    "function": "AI Engineer",
+    "company": "tripla",
+    "industry": "Travel Tech",
+    "location": "Nishi-Shinjuku, Tokyo",
+    "workStyle": "Hybrid (2 days/week in office)",
+    "level": "Mid",
+    "salary": "Up to ¥12M",
+    "language": "English (Japanese a plus)",
+    "japanese": "None",
+    "stack": [
+      "Python",
+      "LLMs",
+      "LangChain",
+      "Google ADK",
+      "BigQuery",
+      "dbt",
+      "Airflow",
+      "GCP"
+    ],
+    "summary": "Builds and evaluates the ML models and LLM agents behind tripla's hotel recommender systems. Also rebuilds the chatbot used by thousands of hotels as an AI agent. Greenfield work on GCP.",
+    "requirements": [
+      "2+ years as an ML engineer, AI engineer or full-stack data scientist",
+      "Strong statistics/ML fundamentals; built solutions with LLMs",
+      "Production Python and software engineering best practices",
+      "SQL plus orchestration tools (dbt, Airflow, Prefect)",
+      "Nice to have: RAG, agentic systems, LLM eval tools (LangSmith, Langfuse)"
+    ],
+    "status": "Open"
+  },
+  {
+    "id": "tripla-senior-pdm-genai",
+    "title": "Senior Product Manager – Gen AI",
+    "function": "PdM",
+    "company": "tripla",
+    "industry": "Travel Tech",
+    "location": "Nishi-Shinjuku, Tokyo",
+    "workStyle": "Hybrid (2 days/week in office)",
+    "level": "Senior",
+    "salary": "Up to ¥12M",
+    "language": "English (Japanese a plus)",
+    "japanese": "None",
+    "stack": [
+      "GenAI",
+      "AI Agents",
+      "MCP",
+      "UCP",
+      "AEO",
+      "Structured Data"
+    ],
+    "summary": "Owns tripla's GenAI platform and agentic commerce. Makes the hotel data of 8,000+ properties discoverable by AI (AEO, MCP/UCP) and leads the build of AI agents for travelers and hotel operators.",
+    "requirements": [
+      "5+ years in B2B2C SaaS product management, 2+ years on AI/ML products",
+      "Understands how AI agents consume data (APIs, structured data, MCP/UCP)",
+      "Measures success by outcomes and revenue, not features shipped",
+      "Professional English",
+      "Nice to have: hospitality, travel, fintech or e-commerce background"
+    ],
+    "status": "Open (closes 2026-10-31)"
+  },
+  {
+    "id": "kpmg-ignition-swe",
+    "title": "Software Engineer",
+    "function": "Software Engineer",
+    "company": "KPMG Ignition Tokyo",
+    "industry": "Professional Services",
+    "location": "Tokyo",
+    "workStyle": "Remote",
+    "level": "Mid",
+    "salary": "¥10M – ¥11M",
+    "language": "Japanese (N2+) + Business English (TOEIC 800+)",
+    "japanese": "Conversational",
+    "stack": [
+      "Python",
+      "Django",
+      "React",
+      "TypeScript",
+      "PostgreSQL",
+      "Docker",
+      "Azure"
+    ],
+    "summary": "Builds and maintains web applications for KPMG AZSA's audit business. Works with product, design and QA, and uses AI to make audit work faster.",
+    "requirements": [
+      "4+ years building web apps with Django and React",
+      "Strong Python, JavaScript/TypeScript and PostgreSQL",
+      "Git, Docker and cloud experience (Azure preferred)",
+      "Comfortable with both new development and maintenance",
+      "Nice to have: CI/CD, testing (PyTest, Jest, Cypress), REST/GraphQL APIs"
+    ],
+    "status": "Open"
+  },
+  {
+    "id": "h2-product-manager",
+    "title": "Product Manager – AI",
+    "function": "PdM",
+    "company": "H2 Corporation",
+    "industry": "Construction Tech",
+    "location": "Tokyo",
+    "workStyle": "Hybrid (3 days/week in office)",
+    "level": "Senior",
+    "salary": "Up to ¥25M",
+    "language": "Japanese; business English or Korean",
+    "japanese": "Business",
+    "stack": [
+      "B2B SaaS",
+      "AI/ML Products",
+      "Product Strategy",
+      "UX",
+      "Figma"
+    ],
+    "summary": "Leads new AI products for construction companies, including \"AI Sekisan\", which automates cost estimating. Owns research, roadmap, specs and KPIs at a funded startup (¥310M raised in 2024).",
+    "requirements": [
+      "Product manager experience in B2B SaaS",
+      "Has built a product or service from zero",
+      "Experience with ML or data science products",
+      "UI/UX design and software development knowledge",
+      "Nice to have: construction industry knowledge"
+    ],
+    "status": "Open"
+  },
+  {
+    "id": "h2-backend-engineer",
+    "title": "Backend Engineer",
+    "function": "Software Engineer",
+    "company": "H2 Corporation",
+    "industry": "Construction Tech",
+    "location": "Tokyo",
+    "workStyle": "Hybrid (3 days/week in office)",
+    "level": "Senior",
+    "salary": "Up to ¥20M",
+    "language": "English only OK",
+    "japanese": "None",
+    "stack": [
+      "Go",
+      "Rust",
+      "PostgreSQL",
+      "AWS",
+      "Kubernetes",
+      "Terraform"
+    ],
+    "summary": "Early engineer at a VC-backed AI startup for the construction industry. Designs the APIs, data structures and systems that power AI features and connect to clients' systems.",
+    "requirements": [
+      "5+ years in software development, 4+ building backends for products",
+      "Very comfortable with Go or Rust",
+      "Strong teamwork and written documentation",
+      "Nice to have: optimizing systems for AI serving performance"
+    ],
+    "status": "Open"
+  },
+  {
+    "id": "h2-frontend-engineer",
+    "title": "Frontend Engineer",
+    "function": "Software Engineer",
+    "company": "H2 Corporation",
+    "industry": "Construction Tech",
+    "location": "Tokyo",
+    "workStyle": "Hybrid (3 days/week in office)",
+    "level": "Senior",
+    "salary": "Up to ¥20M",
+    "language": "English only OK",
+    "japanese": "None",
+    "stack": [
+      "TypeScript",
+      "Next.js",
+      "Vite",
+      "Canvas",
+      "Figma"
+    ],
+    "summary": "Early engineer at a VC-backed AI startup for the construction industry. Builds the interactive canvas where users work with AI on large construction drawings.",
+    "requirements": [
+      "5+ years in software development, 4+ building frontends for products",
+      "Strong TypeScript with Next.js or Vite (must have)",
+      "Quick prototyping to test ideas with users",
+      "Nice to have: performance tuning for apps with many objects on a canvas"
+    ],
+    "status": "Open"
+  },
+  {
+    "id": "geniee-pdm-adplatform",
+    "title": "Product Manager – Ad Platform",
+    "function": "PdM",
+    "company": "Geniee",
+    "industry": "AdTech",
+    "location": "Nishi-Shinjuku, Tokyo",
+    "workStyle": "On-site (flexible for family needs)",
+    "level": "Mid",
+    "salary": "¥8M – ¥11.5M",
+    "language": "Business Japanese (English a plus)",
+    "japanese": "Business",
+    "stack": [
+      "SQL",
+      "Python",
+      "A/B Testing",
+      "Statistics",
+      "RTB",
+      "Agile"
+    ],
+    "summary": "Data-driven PM for Geniee's ad platform, which handles 90 billion ad impressions a month. Finds growth bottlenecks in the data, runs A/B tests, and launches new products in CTV, digital signage and retail media.",
+    "requirements": [
+      "2+ years as a product manager",
+      "Data analysis experience: SQL, A/B testing, statistics or Python",
+      "Experience designing business KPIs",
+      "Nice to have: ad tech (SSP/DSP/ad network) background",
+      "Nice to have: engineering or data science experience, business English"
+    ],
+    "status": "Open"
+  },
+  {
+    "id": "geniee-engineering-director",
+    "title": "Engineering Director – Ad Platform",
+    "function": "Software Engineer",
+    "company": "Geniee",
+    "industry": "AdTech",
+    "location": "Nishi-Shinjuku, Tokyo",
+    "workStyle": "Hybrid (2 days/week from home)",
+    "level": "Executive",
+    "salary": "¥13M – ¥22M",
+    "language": "Japanese N1+ (business English a plus)",
+    "japanese": "Fluent",
+    "stack": [
+      "Engineering Leadership",
+      "C/C++",
+      "AWS",
+      "GCP",
+      "SRE",
+      "High-traffic Systems"
+    ],
+    "summary": "Leads a 30-person engineering team behind one of Japan's top ad platforms, with room to grow to 60 people including the India office. About 20–30% hands-on, plus tech strategy, hiring and architecture.",
+    "requirements": [
+      "10+ years in software development",
+      "5+ years in management, including managing multiple teams or EMs",
+      "Architecture design for large-scale web services or SaaS",
+      "Has used AI to boost development productivity",
+      "Japanese at N1 level",
+      "Nice to have: ad tech, C/C++, CTO/VPoE experience, business English"
+    ],
+    "status": "Open"
+  },
+  {
+    "id": "fast-accounting-pdm",
+    "title": "Product Manager – Enterprise AI",
+    "function": "PdM",
+    "company": "Fast Accounting",
+    "industry": "FinTech / AI",
+    "location": "Shiba Park, Tokyo",
+    "workStyle": "On-site",
+    "level": "Mid",
+    "salary": "¥7M – ¥12M",
+    "language": "Japanese (team uses Japanese and English)",
+    "japanese": "Business",
+    "stack": [
+      "B2B SaaS",
+      "AI Agents",
+      "LLM",
+      "Scrum",
+      "Jira"
+    ],
+    "summary": "PM for \"Steward\", an AI agent platform that automates finance and accounting work for 165+ large companies. Owns vision, roadmap, requirements and KPIs at a listed company (TSE Growth).",
+    "requirements": [
+      "3+ years as a B2B product manager, or 3+ years managing software releases",
+      "Engineers who were tech leads or managers are also considered",
+      "Technical basics (load balancing, databases)",
+      "Can run meetings in Japanese",
+      "Nice to have: accounting or back-office knowledge"
+    ],
+    "status": "Open"
+  },
+  {
+    "id": "fast-accounting-backend",
+    "title": "Backend Engineer",
+    "function": "Software Engineer",
+    "company": "Fast Accounting",
+    "industry": "FinTech / AI",
+    "location": "Shiba Park, Tokyo",
+    "workStyle": "On-site",
+    "level": "Mid",
+    "salary": "¥7M – ¥12M",
+    "language": "Basic English and Japanese for meetings",
+    "japanese": "Conversational",
+    "stack": [
+      "Python",
+      "Go",
+      "TypeScript",
+      "AWS",
+      "LLM",
+      "RAG",
+      "Kubernetes"
+    ],
+    "summary": "Builds the backend for \"Steward\", an AI platform that automates accounting work such as payments and invoice matching. Works with an in-house AI research team on LLM and RAG features.",
+    "requirements": [
+      "3+ years of backend development in Python, Go or TypeScript",
+      "Built and ran web services on cloud (e.g., AWS)",
+      "Microservices or API development, plus SQL databases",
+      "Basic English and Japanese for meetings",
+      "Nice to have: Kubernetes, Docker, enterprise SaaS, DDD"
+    ],
+    "status": "Open"
+  },
+  {
+    "id": "linkx-software-engineer",
+    "title": "Software Engineer – FinTech",
+    "function": "Software Engineer",
+    "company": "LiNKX",
+    "industry": "FinTech",
+    "location": "Toranomon, Tokyo",
+    "workStyle": "Hybrid (after the first month)",
+    "level": "Mid",
+    "salary": "¥5M – ¥12M",
+    "language": "Japanese N2+ (English a plus)",
+    "japanese": "Business",
+    "stack": [
+      "Java",
+      "Kotlin",
+      "Spring",
+      "Go",
+      "C#/.NET",
+      "Vue.js",
+      "TypeScript",
+      "AWS",
+      "GCP",
+      "Azure"
+    ],
+    "summary": "Builds financial products for clients, such as payment platforms, public banking APIs and modern accounting systems. Small agile teams of 5–8 people with engineers from 20+ countries.",
+    "requirements": [
+      "3+ years as a software engineer",
+      "Experience with Spring (Java/Kotlin), Vue.js/Nuxt.js, Go or C#/.NET",
+      "Business Japanese (N2+) for non-native speakers",
+      "Nice to have: AWS, GCP or Azure",
+      "Nice to have: everyday English, building products from the concept stage"
+    ],
+    "status": "Open"
+  },
+  {
+    "id": "sansan-tech-lead-architect",
+    "title": "Tech Lead / Architect – Contract One",
+    "function": "Software Engineer",
+    "company": "Sansan",
+    "industry": "B2B SaaS / AI",
+    "location": "Shibuya, Tokyo (also Osaka, Nagoya, Fukuoka)",
+    "workStyle": "Hybrid (3 days/week in office)",
+    "level": "Senior",
+    "salary": "¥10.15M – ¥19.38M",
+    "language": "Japanese",
+    "japanese": "Business",
+    "stack": [
+      "Kotlin",
+      "Ktor",
+      "Spring Boot",
+      "TypeScript",
+      "React",
+      "PostgreSQL",
+      "Elasticsearch",
+      "Google Cloud"
+    ],
+    "summary": "Technical lead for Contract One, Sansan's fast-growing AI contract database. Owns long-term architecture, including microservices, LLM inference infrastructure and search, and raises the skill level of the whole team.",
+    "requirements": [
+      "7+ years of web application development",
+      "Backend in a statically-typed language (Java, Kotlin, Go, TypeScript)",
+      "SPA frontend experience (React, Vue.js)",
+      "Cloud design and operations (GCP, AWS or Azure), DDD and RDB tuning",
+      "Has led a development team",
+      "Nice to have: high-traffic services, SRE/microservices, security design"
+    ],
+    "status": "Open"
+  },
+  {
+    "id": "hmlet-pdm",
+    "title": "Product Manager",
+    "function": "PdM",
+    "company": "Hmlet Japan",
+    "industry": "Real Estate Tech",
+    "location": "Tokyo",
+    "workStyle": "Hybrid (3 days/week in office)",
+    "level": "Mid",
+    "salary": "¥10M – ¥11M",
+    "language": "Business Japanese + working English",
+    "japanese": "Business",
+    "stack": [
+      "PRD",
+      "Jira",
+      "Figma",
+      "Airtable",
+      "Pipedrive",
+      "Go",
+      "AWS"
+    ],
+    "summary": "First dedicated PM at a flexible-living startup (furnished apartments from 1 month) expanding to Osaka, Fukuoka and APAC. Turns business needs into specs and drives delivery. Reports to the Japan executive officer.",
+    "requirements": [
+      "3+ years as a product manager",
+      "Turned customer and user interviews into requirements and PRDs",
+      "Led decisions with sales, CS, engineering and leadership",
+      "Jira or Backlog experience",
+      "Business Japanese and working English (APAC team)",
+      "Nice to have: startup agile experience, web/API knowledge (no coding needed)"
+    ],
+    "status": "Open"
+  },
+  {
+    "id": "exawizards-senior-fullstack",
+    "title": "Senior Fullstack Engineer – Generative AI",
+    "function": "Software Engineer",
+    "company": "Exa Enterprise AI (ExaWizards)",
+    "industry": "Generative AI",
+    "location": "Shibaura, Tokyo",
+    "workStyle": "Hybrid (1 day/week in office)",
+    "level": "Senior",
+    "salary": "¥8.04M – ¥12M",
+    "language": "Business English + Japanese N2+ (team works in English)",
+    "japanese": "Business",
+    "stack": [
+      "Python",
+      "Django",
+      "TypeScript",
+      "Next.js",
+      "React",
+      "AWS",
+      "Datadog"
+    ],
+    "summary": "Tech lead for exaBase, Japan's No.1 enterprise generative AI platform, and new AI agent products. Covers backend, frontend and cloud at a fast-growing subsidiary (about ¥1.7B ARR in 18 months).",
+    "requirements": [
+      "Has led a development team (or a similar role)",
+      "3+ years building web or mobile apps",
+      "Development experience at a product company (not only agency/SI)",
+      "Business-level English and Japanese (N2+)",
+      "Must live in Japan within commuting distance of Tokyo",
+      "The stack can be learned after joining"
+    ],
+    "status": "Open"
+  },
+  {
+    "id": "mercari-backend-architect",
+    "title": "Software Engineer, Backend Architect",
+    "function": "Software Engineer",
+    "company": "Mercari",
+    "industry": "Marketplace / FinTech",
+    "location": "Roppongi, Tokyo",
+    "workStyle": "Hybrid (2 days/week in office)",
+    "level": "Senior",
+    "salary": "Up to ¥18M",
+    "language": "Japanese (CEFR B2) + English (CEFR B1)",
+    "japanese": "Business",
+    "stack": [
+      "Go",
+      "GCP",
+      "AWS",
+      "Kubernetes",
+      "Docker",
+      "Microservices"
+    ],
+    "summary": "Solves architecture problems that span Mercari's 400+ microservices and 50+ teams, including fintech (Merpay, Mercoin). Sets backend standards and builds shared tools for internal developers.",
+    "requirements": [
+      "Backend or infrastructure development and operations",
+      "Data modeling with RDBMS and NoSQL",
+      "Network protocol knowledge (TCP/IP, HTTP)",
+      "Found and fixed system problems such as performance issues",
+      "Solved technical issues across teams on your own initiative",
+      "Nice to have: Go, Kubernetes, microservices, Design Docs/ADRs"
+    ],
+    "status": "Open"
+  },
+  {
+    "id": "trust-application-engineer",
+    "title": "Application Engineer – AI Solutions",
+    "function": "AI Engineer",
+    "company": "Trust",
+    "industry": "Enterprise AI",
+    "location": "Tokyo",
+    "workStyle": "Hybrid (2–3 days/week in office)",
+    "level": "Mid",
+    "salary": "Up to ¥15M",
+    "language": "Business Japanese (English a plus)",
+    "japanese": "Business",
+    "stack": [
+      "Python",
+      "Generative AI",
+      "Cloud",
+      "Git"
+    ],
+    "summary": "Builds custom AI solutions for enterprise clients, working directly with them on their needs and sometimes in their systems. Good fit for engineers from SIer or consulting backgrounds. Urgent hire.",
+    "requirements": [
+      "Hands-on Python development",
+      "Development in a cloud environment, with Git",
+      "Comfortable working directly with clients",
+      "Business-level Japanese",
+      "Nice to have: some generative AI experience (deep expertise not required)"
+    ],
+    "status": "Open (urgent)"
+  },
+  {
+    "id": "thecoo-backend-engineer",
+    "title": "Backend Engineer – Fanicon",
+    "function": "Software Engineer",
+    "company": "THECOO",
+    "industry": "Fan Community / Creator Economy",
+    "location": "Harajuku, Tokyo",
+    "workStyle": "Remote friendly (flextime, no core time)",
+    "level": "Mid",
+    "salary": "Up to ¥8.8M",
+    "language": "English only OK",
+    "japanese": "None",
+    "stack": [
+      "Node.js",
+      "JavaScript",
+      "MySQL",
+      "BigQuery",
+      "Redis",
+      "GCP",
+      "AWS"
+    ],
+    "summary": "Builds and runs the server side of Fanicon, a paid fan community app with about 2,300 communities. Works closely with PMs on specs and improvements, with freedom to choose how things are built.",
+    "requirements": [
+      "Lead or core server-side engineer on a team that shipped a product, or",
+      "Agile server-side development working closely with a PM",
+      "Node.js preferred, but fast learners from other languages are welcome",
+      "Nice to have: high-traffic systems, in-app payments (IAP/IAB), HLS live streaming",
+      "Nice to have: iOS/Android/web client experience"
+    ],
+    "status": "Open"
+  },
+  {
+    "id": "thecoo-senior-pdm",
+    "title": "Senior Product Manager – Fanicon / +KIRARI",
+    "function": "PdM",
+    "company": "THECOO",
+    "industry": "Fan Community / Creator Economy",
+    "location": "Harajuku, Tokyo",
+    "workStyle": "Hybrid (2 days/week in office)",
+    "level": "Senior",
+    "salary": "Up to ¥12M",
+    "language": "Business Japanese + English (dev team speaks English)",
+    "japanese": "Business",
+    "stack": [
+      "Product Strategy",
+      "PRD",
+      "KPI Design",
+      "A/B Testing",
+      "BigQuery",
+      "Mobile Apps"
+    ],
+    "summary": "Owns strategy and roadmap for two fan community apps, Fanicon and +KIRARI. Turns input from users, artists and sales into clear priorities, and works with an English-speaking dev team.",
+    "requirements": [
+      "About 7+ years as a PM or Product Owner for web or mobile products",
+      "Has turned a product vision into a roadmap",
+      "Backlog management, requirements and PRD writing",
+      "Negotiates in Japanese and works with an English-speaking team",
+      "Nice to have: subscription or consumer apps, A/B testing, mentoring PMs"
+    ],
+    "status": "Open"
+  },
+  {
+    "id": "earthbrain-ai-engineer",
+    "title": "AI Engineer",
+    "function": "AI Engineer",
+    "company": "EARTHBRAIN",
+    "industry": "Construction Tech",
+    "location": "Roppongi, Tokyo",
+    "workStyle": "Hybrid (2 days/week in office)",
+    "level": "Mid",
+    "salary": "Up to ¥12M",
+    "language": "English (technical communication)",
+    "japanese": "None",
+    "stack": [
+      "Python",
+      "PyTorch",
+      "Point Clouds",
+      "Transformers",
+      "Reinforcement Learning",
+      "AWS"
+    ],
+    "summary": "Joins the AI team at a Komatsu spin-off whose Smart Construction platform runs on 15,000+ job sites. Researches and builds AI, ML and optimization solutions for construction, from idea to deployment.",
+    "requirements": [
+      "Master's in ML, AI, data science or CS plus 2+ years building ML models, or a relevant PhD",
+      "Strong grasp of modern ML methods and data analytics",
+      "Python and PyTorch",
+      "Can turn research papers into working solutions",
+      "Nice to have: point clouds/NeRFs, diffusion models, reinforcement learning, deploying models"
+    ],
+    "status": "Open"
+  }
+]
